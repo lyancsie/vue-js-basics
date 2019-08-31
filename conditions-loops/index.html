@@ -1,0 +1,45 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/vuex"></script>
+<script src="vue.js"></script>
+
+<head>
+
+</head>
+
+<body>
+    <div id="app">
+        <button @click="show = !show">Click me</button>
+        <!--<h1 v-if="show">Hello<span>Xyz</span></h1>-->
+        <template v-if="show">
+            <h1>Hello</h1>
+            <h2>Bye</h2>
+        </template>
+        <h1 v-else>Lol</h1>
+
+        <div v-for="st, i in students">{{ st }} ({{ i }})</div>
+        <div v-for="book in books">{{ book }}</div>
+        
+        <template v-for="book in books">
+            <div>{{ book.author }}</div>
+            <div>{{ book.title }}</div>
+        </template>
+
+        <span v-for="n in 20">{{ n*2 }}</span>
+
+    </div>
+</body>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            show: false,
+            students: ['John', 'Jane', 'Esther'],
+            books: [
+            {id: 1, author:'Moliere', title: 'Candide'},
+            {id: 2, author: 'GoF', title: 'Design patterns'}
+        ]
+        }
+    })
+
+</script>

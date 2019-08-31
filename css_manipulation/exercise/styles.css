@@ -16,8 +16,15 @@
 
 .random {
     background-color: blueviolet;
+    width: 100px;
+    height: 100px;
 }
 
 .random2 {
     background-color: sandybrown;
+}
+
+.veryRandomClass{
+    background-color: fuchsia;
+    height: 50px;
 }

@@ -18,14 +18,16 @@
   </div>
   <!-- 4) Let the user enter a class and enter true/ false for another class (create some example classes) and attach the classes -->
   <div>
-    <input type="text">
-    <input type="text">
-    <div></div>
+    <input type="text" v-model="className">
+    <input type="text" v-model="veryRandom">
+    <div :class="[className, {veryRandom: veryRandomClass}]"></div>
   </div>
   <!-- 5) Repeat 3) but now with values for styles (instead of class names). Attach the respective styles.  -->
   <div>
-    <input type="text">
-    <div></div>
+    <label for="1">Background color: </label> <input id=1 type="text" v-model="backgroundColor">
+    <label for="2">Font size: </label><input id=2 type="text" v-model="fontSize">
+    <label for="3">Height: </label><input id=3 type="text" v-model="height">
+    <div v-bind:style="{ backgroundColor: backgroundColor, fontSize: fontSize, height: height+'px' }">Random text</div>
   </div>
   <!-- 6) Create a simple progress bar with setInterval and style bindings. Start it by hitting the below button. -->
   <div>
@@ -38,8 +40,12 @@
 new Vue({
     el: '#exercise',
     data: {
+        height: 300,
+        className: '',
+        backgroundColor: 'aqua',
+        fontSize: '44',
         customClass: 'random',
-        style: '',
+        veryRandom: false,
         effectStarted: false,
         style1:{
             fontSize: '30px',
@@ -62,7 +68,7 @@ new Vue({
     watch: {
         effectStarted: function(){
             if(effectStarted){
-                
+                //do sth        
             }
         }
     }
