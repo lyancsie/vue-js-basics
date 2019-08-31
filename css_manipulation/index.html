@@ -1,0 +1,33 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/vuex"></script>
+<script src="vue.js"></script>
+
+<link rel="stylesheet" href="style.css">
+
+<div id="app">
+    <div class="demo" :style="{backgroundColor: color}"></div>
+    <di class="demo" :style="style"></di>
+    <input type="text" v-model="color">
+    <input type="text" v-model="height">
+    <input type="text" v-model="width">
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            color: 'green',
+            width: 100,
+            height: 100
+        },
+        computed: {
+            style: function () {
+                return {
+                    backgroundColor: this.color,
+                    width: this.width + 'px',
+                    height: this.height + 'px'
+                }
+            }
+        }
+    })
+</script>
